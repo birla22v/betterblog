@@ -34,6 +34,7 @@ class PostsController < ApplicationController
   def create
     binding.pry
     @post = Post.new(post_params)
+    @user = User.find([:id])
 
     respond_to do |format|
       if @post.save
